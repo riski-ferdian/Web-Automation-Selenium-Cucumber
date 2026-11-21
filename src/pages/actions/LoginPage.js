@@ -1,6 +1,6 @@
 import loginLocator from "../locators/loginLocator.js";
 import { until } from "selenium-webdriver";
-import BasePage from "../base/basePage.js";
+import BasePage from "../base/BasePage.js";
 
 class LoginPage extends BasePage {
   /**
