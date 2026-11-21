@@ -1,9 +1,7 @@
-/*
-import { Builder } from "selenium-webdriver";
-export async function createDriver() {
-  return await new Builder().forBrowser("chrome").build();
-}
-  */
+// import { Builder } from "selenium-webdriver";
+// export async function createDriver() {
+//   return await new Builder().forBrowser("chrome").build();
+// }
 
 import { Builder } from "selenium-webdriver";
 import chrome from "selenium-webdriver/chrome.js";

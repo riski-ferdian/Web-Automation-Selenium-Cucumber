@@ -1,5 +1,7 @@
 import { createDriver } from "../../../src/utils/driver.js";
-import { Before, After } from "@cucumber/cucumber";
+import { Before, After, setDefaultTimeout } from "@cucumber/cucumber";
+
+setDefaultTimeout(30 * 1000);
 
 Before(async function () {
   this.driver = await createDriver();

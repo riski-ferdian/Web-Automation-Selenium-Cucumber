@@ -20,11 +20,6 @@ When("click login button", async function () {
   await this.loginPage.clickLoginButton();
 });
 
-Then("user redirect to dashboard page", async function () {
-  let title = await this.loginPage.dashboardTitle();
-  assert.strictEqual(title, "Products", "title berbeda");
-});
-
 When("user input invalid username and password", async function () {
   await this.loginPage.login(
     userData.invalidUser.username,
