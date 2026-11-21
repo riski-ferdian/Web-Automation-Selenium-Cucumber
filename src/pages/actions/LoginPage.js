@@ -1,12 +1,13 @@
 import loginLocator from "../locators/loginLocator.js";
 import { until } from "selenium-webdriver";
+import BasePage from "../base/basePage.js";
 
-class LoginPage {
+class LoginPage extends BasePage {
   /**
    @param {import('selenium-webdriver').WebDriver} driver
    */
   constructor(driver) {
-    this.driver = driver;
+    super(driver);
   }
 
   async open() {
@@ -14,20 +15,16 @@ class LoginPage {
   }
 
   async login(username, password) {
-    await this.driver.findElement(loginLocator.username).sendKeys(username);
-    await this.driver.findElement(loginLocator.password).sendKeys(password);
+    await this.inputText(loginLocator.username, username);
+    await this.inputText(loginLocator.password, password);
   }
 
-  async click() {
-    await this.driver.findElement(loginLocator.loginButton).click();
+  async clickLoginButton() {
+    await this.clickElement(loginLocator.loginButton);
   }
 
   async dashboardTitle() {
-    let title = await this.driver.wait(
-      until.elementLocated(loginLocator.dashboardTitle),
-      5000,
-    );
-    return await title.getText();
+    return await this.getText(loginLocator.dashboardTitle);
   }
 }
 

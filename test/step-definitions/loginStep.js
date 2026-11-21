@@ -16,7 +16,7 @@ When("user input username and password", async function () {
 });
 
 When("click login button", async function () {
-  await this.loginPage.click();
+  await this.loginPage.clickLoginButton();
 });
 
 Then("user redirect to dashboard page", async function () {
