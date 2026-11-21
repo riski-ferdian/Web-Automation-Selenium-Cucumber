@@ -26,6 +26,10 @@ class LoginPage extends BasePage {
   async dashboardTitle() {
     return await this.getText(loginLocator.dashboardTitle);
   }
+
+  async getErrorMessage() {
+    return await this.getText(loginLocator.errorMessage);
+  }
 }
 
 export default LoginPage;
